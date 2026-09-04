@@ -1,0 +1,329 @@
+/* ============================================================
+   Joanna Nicks — site styles
+   Colours and type live here. Change a value once, it changes
+   everywhere on the site.
+   ============================================================ */
+
+:root {
+  --peach:  #FFE4CE;
+  --orange: #F5390B;
+  --yellow: #FFC93D;
+  --ink:    #17110D;
+  --cream:  #FFF4E9;
+
+  --measure: 34rem;          /* max line length for body text */
+  --pad: clamp(1.5rem, 5vw, 5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--peach);
+  color: var(--ink);
+  font-family: "Work Sans", system-ui, sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+/* ---------- Type ---------- */
+
+h1, h2, h3, .display, nav a {
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(3.2rem, 13vw, 10rem);
+  line-height: 0.85;
+  letter-spacing: -0.035em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.15rem;
+  text-transform: uppercase;
+}
+
+p { max-width: var(--measure); }
+
+.lede {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+
+/* ---------- Bands ---------- */
+
+.band { padding: clamp(3rem, 8vw, 7rem) var(--pad); }
+.band--peach  { background: var(--peach);  color: var(--ink); }
+.band--orange { background: var(--orange); color: var(--cream); }
+.band--cream  { background: var(--cream);  color: var(--ink); }
+.band--ink    { background: var(--ink);    color: var(--cream); }
+
+.band--orange a, .band--ink a { color: var(--yellow); }
+
+/* ---------- Header / nav ---------- */
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.5rem var(--pad);
+  background: var(--peach);
+}
+
+header.site .wordmark {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+nav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover, nav a:focus-visible { border-bottom-color: var(--orange); }
+nav a[aria-current="page"] { border-bottom-color: var(--orange); }
+
+/* ---------- Hero ---------- */
+
+.hero { padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(3rem, 9vw, 7rem); }
+.hero h1 { color: var(--orange); }
+
+.hero .roles {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.6vw, 1.75rem);
+  line-height: 1.25;
+  color: var(--orange);
+  margin: 1.75rem 0 0;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Bio band with the big HELLO ---------- */
+
+.bio {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 62rem) {
+  .bio { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .bio .shout { text-align: right; }
+}
+
+.shout {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin: 0;
+  order: -1;
+}
+
+@media (min-width: 62rem) { .shout { order: 0; } }
+
+/* ---------- The fork: two doors ---------- */
+
+.doors {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .doors { grid-template-columns: 1fr 1fr; }
+}
+
+.door {
+  display: block;
+  text-decoration: none;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
+  min-height: clamp(16rem, 34vw, 26rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background-color 120ms linear;
+}
+
+.door--production { background: var(--ink);    color: var(--cream); }
+.door--writing    { background: var(--orange); color: var(--cream); }
+
+.door--production:hover, .door--production:focus-visible { background: #000; }
+.door--writing:hover,    .door--writing:focus-visible    { background: #D02F06; }
+
+.door h2 { margin-bottom: 0.75rem; }
+.door p { font-size: 0.95rem; max-width: 30ch; opacity: 0.9; margin: 0; }
+.door .go {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Work entries ---------- */
+
+.work { border-top: 4px solid currentColor; padding-top: 2rem; margin-top: 3rem; }
+.work:first-of-type { margin-top: 0; }
+
+.work .form {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0 0 1.25rem;
+}
+
+.work .accolade {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--orange);
+  margin: 0 0 1.25rem;
+  max-width: 30ch;
+}
+
+.band--orange .work .accolade, .band--ink .work .accolade { color: var(--yellow); }
+
+blockquote {
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+  border-left: 4px solid var(--orange);
+  max-width: var(--measure);
+  font-size: 1.05rem;
+}
+
+.band--orange blockquote { border-left-color: var(--yellow); }
+
+blockquote cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Portfolio / embed slots ---------- */
+
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  margin-top: 2.5rem;
+}
+
+.embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 0;
+  background: var(--ink);
+}
+
+.placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: repeating-linear-gradient(
+    45deg, rgba(0,0,0,0.06) 0 12px, transparent 12px 24px
+  ), var(--peach);
+  outline: 3px dashed var(--orange);
+  outline-offset: -3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--orange);
+}
+
+.caption { margin: 0.75rem 0 0; font-size: 0.95rem; }
+.caption strong { font-family: "Poppins", sans-serif; }
+
+/* ---------- Contact ---------- */
+
+.contact h2 {
+  font-size: clamp(3rem, 13vw, 9rem);
+  line-height: 0.85;
+  color: var(--orange);
+}
+
+.band--ink .contact h2 { color: var(--orange); }
+
+.contact .email {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  display: inline-block;
+  margin-top: 1rem;
+  letter-spacing: -0.01em;
+}
+
+footer.site {
+  padding: 2rem var(--pad);
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+}
+
+/* ---------- Accessibility ---------- */
+
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.band--ink :focus-visible, .band--orange :focus-visible { outline-color: var(--yellow); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.75rem 1rem;
+}
+.skip:focus { left: var(--pad); top: 0.5rem; z-index: 10; }
