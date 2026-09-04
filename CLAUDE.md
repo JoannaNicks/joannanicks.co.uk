@@ -4,7 +4,7 @@ Context for any agent working on this repo.
 
 ## What this is
 
-The personal site for Joanna Nicks — award-winning playwright, and freelance content producer / video editor based in West Yorkshire. Live at joannanicks.co.uk.
+The personal site for Joanna Nicks — award-winning playwright, and freelance Content Producer / Video Editor based in West Yorkshire. Live at joannanicks.co.uk.
 
 Two audiences, deliberately separated:
 
@@ -12,6 +12,8 @@ Two audiences, deliberately separated:
 - **Theatre and screen commissioners.** They read. Credits, awards, press.
 
 The homepage introduces Joanna and forks to the two sides. Don't merge them.
+
+The separation is structural, not just visual. Each side is a self-contained section with its own nav; neither section links to the other. The only route across is the wordmark, which goes back to the homepage. A visitor reading about podcast editing should never be offered a link to the plays, and vice versa.
 
 ## Stack
 
@@ -21,11 +23,28 @@ This is a deliberate choice. Do not introduce React, Next.js, Tailwind, a bundle
 
 ## Files
 
-- `index.html` — homepage
-- `production.html` — content producer / video editor side
-- `writing.html` — playwriting side
+- `index.html` — homepage, the fork
+
+Content & Video section:
+
+- `production.html` — section front page
+- `production-portfolio.html` — the work
+- `production-testimonials.html` — client quotes and client list
+- `production-contact.html`
+
+Playwriting section:
+
+- `writing.html` — section front page
+- `writing-work.html` — produced works, press, production images
+- `writing-contact.html`
+
+Shared:
+
 - `styles.css` — every colour, font and layout rule
 - `images/` — photos, original resolution
+
+New pages take the `production-` or `writing-` prefix so the two sections stay
+obvious in the file list.
 
 ## Conventions
 
@@ -34,8 +53,11 @@ This is a deliberate choice. Do not introduce React, Next.js, Tailwind, a bundle
 - Headings are uppercase via CSS, not typed in caps. Keep the source readable.
 - British English throughout.
 - Video and audio are never uploaded to this repo. Always embed from YouTube, Vimeo, Spotify or Apple Podcasts.
-- Nav appears in all three pages. Change it in one, change it in all three.
+- Each section has its own nav, repeated on every page in that section. Change it in one, change it in all of them.
+- A section's nav lists only that section's pages. Never add a cross-section link.
+- The wordmark links to `index.html` on every page. That is the only way between sections.
 - `aria-current="page"` marks the current page in the nav.
+- `.next` is the block of onward links at the foot of a page. Same-section links only.
 
 ## Design brief
 
@@ -45,11 +67,11 @@ If a change would make the site look more like a generic portfolio template, don
 
 ## Outstanding
 
-- Content/video page copy is placeholder — Joanna to write.
+- Content & Video copy is placeholder — Joanna to write.
+- Portfolio, testimonials and client list are empty placeholders awaiting real entries.
 - All embeds are placeholder boxes (`.placeholder`). Replace with real iframes, adding `class="embed"`.
 - Production photos needed at original resolution; the ones on the old Wix site are downscaled and unusable.
 - Colours are eyeballed from a screenshot. Replace with exact values from Canva when available.
-- `hello@joannanicks.co.uk` is a placeholder address.
 
 ## Working style
 

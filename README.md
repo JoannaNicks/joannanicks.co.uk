@@ -4,13 +4,27 @@ Plain HTML and CSS. No build step, no framework, no dependencies. Push to `main`
 
 ## Files
 
+The site is one homepage and two separate sections. Once you're inside a section, the menu only shows that section's pages — the way back across is the **Joanna Nicks** wordmark at the top left, which always returns to the homepage.
+
 | File | What's in it |
 |---|---|
-| `index.html` | Homepage: name, bio, the fork to the two sides, recent editing, contact |
-| `production.html` | Content producer / video editor: about, podcasts, video, clients |
-| `writing.html` | Playwriting: produced works, awards, press, production images |
+| `index.html` | Homepage: name, bio, the fork to the two sides, contact |
+| **Content & Video** | |
+| `production.html` | Section front page: about, what I do |
+| `production-portfolio.html` | Podcast and video work |
+| `production-testimonials.html` | Client quotes and client list |
+| `production-contact.html` | Contact |
+| **Playwriting** | |
+| `writing.html` | Section front page: about, awards |
+| `writing-work.html` | Produced works, press, production images |
+| `writing-contact.html` | Contact |
+| | |
 | `styles.css` | All colours, fonts and layout. Change a colour once here, it changes everywhere |
 | `images/` | Photos. Drop originals in here |
+
+### Adding a page to a section
+
+Copy an existing page from the same section, change the words, then add a link to it in the `<nav>` **of every page in that section**. Don't link across sections — that's the point of the split.
 
 ## Editing content
 
@@ -59,4 +73,4 @@ Vercel will show the exact records to use — trust its screen over this file if
 
 ## Email
 
-`hello@joannanicks.co.uk` is a placeholder throughout. Either set up forwarding on that address or swap it for Joanna's real address (it appears once per page, in the contact section).
+`nicks.joanna@gmail.com`, on the homepage and on each section's contact page. To change it, search the project for the address — it needs changing in two places per page: the `mailto:` link and the visible text next to it.
