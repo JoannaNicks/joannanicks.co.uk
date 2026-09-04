@@ -41,7 +41,13 @@ Playwriting section:
 Shared:
 
 - `styles.css` — every colour, font and layout rule
-- `images/` — photos, original resolution
+- `images/` — web-sized photos, the ones pages actually reference
+- `images/originals/` — untouched originals, never referenced by a page
+
+Phone and camera originals are far too heavy to serve. Add a resized copy at
+roughly 1400px on the long edge to `images/`, keep the original in
+`images/originals/`, and point the page at the resized one. Always set `width`,
+`height` and a descriptive `alt` on an `<img>`.
 
 New pages take the `production-` or `writing-` prefix so the two sections stay
 obvious in the file list.

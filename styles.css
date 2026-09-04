@@ -143,9 +143,22 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
   grid-template-columns: 1fr;
 }
 
+/* Wide screens: text down the left, HELLO and the photo stacked on the right. */
 @media (min-width: 62rem) {
-  .bio { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
-  .bio .shout { text-align: right; }
+  .bio {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .bio .bio-text  { grid-column: 1; grid-row: 1 / span 2; }
+  .bio .shout     { grid-column: 2; grid-row: 1; text-align: right; }
+  .bio .bio-photo { grid-column: 2; grid-row: 2; }
+}
+
+/* Photo beside the bio. Hard edges, no crop — the picture is the picture. */
+.bio-photo {
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
 }
 
 .shout {
