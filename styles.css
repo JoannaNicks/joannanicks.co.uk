@@ -67,14 +67,14 @@ h3 {
 
 p { max-width: var(--measure); }
 
-/* Big intro paragraph. Sized for a couple of sentences, not a slogan. */
+/* The bold opening statement on a section front page. One sentence, set large. */
 .lede {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
-  line-height: 1.25;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  max-width: 36ch;
+  max-width: 26ch;
 }
 
 /* ---------- Bands ---------- */
