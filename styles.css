@@ -67,13 +67,14 @@ h3 {
 
 p { max-width: var(--measure); }
 
+/* Big intro paragraph. Sized for a couple of sentences, not a slogan. */
 .lede {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  max-width: 22ch;
+  max-width: 36ch;
 }
 
 /* ---------- Bands ---------- */
@@ -236,12 +237,14 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
   padding-bottom: 0.15rem;
 }
 
-/* ---------- Work entries ---------- */
+/* ---------- Work entries and services ---------- */
+/* .work is a play on the writing side; .service is an offer on the
+   content side. Same shape, so they share the rules. */
 
-.work { border-top: 4px solid currentColor; padding-top: 2rem; margin-top: 3rem; }
-.work:first-of-type { margin-top: 0; }
+.work, .service { border-top: 4px solid currentColor; padding-top: 2rem; margin-top: 3rem; }
+.work:first-of-type, .service:first-of-type { margin-top: 0; }
 
-.work .form {
+.work .form, .service .form {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
