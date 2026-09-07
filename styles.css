@@ -280,27 +280,33 @@ blockquote cite {
   margin-top: 0.5rem;
 }
 
-/* ---------- Production gallery (justified rows) ---------- */
-/* Photos share a row height and keep their own widths, so they sit side by
-   side with an uneven right edge — the way they sat on the old site. */
+/* ---------- Production gallery (filled mosaic) ---------- */
+/* Each row stretches to both edges; within a row every photo is the same
+   height but keeps its own width, so the block reads as a mixed collage the
+   way it did on the old site. --ar on each image is its width ÷ height. */
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.5rem, 1.5vw, 1rem);
-  margin-top: 2.5rem;
+  gap: clamp(0.4rem, 1vw, 0.7rem);
 }
 
 .gallery img {
-  height: clamp(9rem, 22vw, 16rem);
-  width: auto;
-  max-width: 100%;
+  --ar: 1.4;
+  flex-grow: var(--ar);
+  flex-basis: calc(var(--ar) * 14rem);
+  width: 0;
+  min-width: 40%;
+  aspect-ratio: var(--ar);
+  object-fit: cover;
+  height: auto;
 }
 
-@media (max-width: 34rem) {
-  /* On a narrow phone, one per row at full width reads better than a
-     cramped, ragged row. */
-  .gallery img { height: auto; width: 100%; }
+/* Stops the final row from stretching its few photos out of proportion. */
+.gallery::after { content: ""; flex-grow: 1000000; }
+
+@media (min-width: 48rem) {
+  .gallery img { min-width: 0; flex-basis: calc(var(--ar) * 13rem); }
 }
 
 /* ---------- Portfolio / embed slots ---------- */
