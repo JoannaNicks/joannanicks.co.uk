@@ -202,7 +202,7 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
   min-height: clamp(16rem, 34vw, 26rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   transition: background-color 120ms linear;
 }
 
@@ -212,13 +212,15 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
 .door--production:hover, .door--production:focus-visible { background: #000; }
 .door--writing:hover,    .door--writing:focus-visible    { background: #D02F06; }
 
-.door h2 { margin-bottom: 0.75rem; }
+/* Reserve two lines so both door titles start and end at the same height. */
+.door h2 { margin-bottom: 0.75rem; min-height: 1.9em; }
 .door p { font-size: 0.95rem; max-width: 30ch; opacity: 0.9; margin: 0; }
 .door .go {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
-  margin-top: 1.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
   color: var(--yellow);
   text-transform: uppercase;
   letter-spacing: 0.04em;
