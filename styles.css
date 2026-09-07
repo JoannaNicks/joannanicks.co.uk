@@ -90,6 +90,9 @@ p { max-width: var(--measure); }
 /* Band whose content sits flush under whatever is above it. */
 .band--flush-top { padding-top: 0; }
 
+/* A gentle top gap — less than a full band, more than flush. */
+.band--tight-top { padding-top: clamp(1.5rem, 4vw, 3rem); }
+
 /* ---------- Header / nav ---------- */
 
 header.site {
