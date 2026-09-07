@@ -281,8 +281,8 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
 
 .band--orange .work .accolade, .band--ink .work .accolade { color: var(--yellow); }
 
-/* Services list titles pick up the orange for a bit of colour. */
-.service h3 { color: var(--orange); }
+/* Play and service titles pick up the orange for a bit of colour. */
+.work h3, .service h3 { color: var(--orange); }
 
 blockquote {
   margin: 1.5rem 0 0;
