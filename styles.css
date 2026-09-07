@@ -247,7 +247,7 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
    content side. Same shape, so they share the rules. */
 
 .work, .service { border-top: 4px solid currentColor; padding-top: 2rem; margin-top: 3rem; }
-.work:first-of-type, .service:first-of-type { margin-top: 0; }
+.work:first-of-type, .service:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
 
 .work .form, .service .form {
   font-family: "Poppins", sans-serif;
@@ -283,6 +283,58 @@ blockquote cite {
   font-size: 0.85rem;
   opacity: 0.75;
   margin-top: 0.5rem;
+}
+
+/* ---------- Production belt (conveyor) ---------- */
+/* A strip of photos that drifts sideways; the script at the foot of
+   writing-work.html moves it and the arrows scroll it by hand. */
+
+.belt {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(0.4rem, 1.2vw, 0.8rem);
+}
+
+.belt-viewport {
+  overflow: hidden;
+  flex: 1;
+}
+
+.belt-track {
+  display: flex;
+  gap: clamp(0.4rem, 1vw, 0.7rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.belt-track li { flex: 0 0 auto; }
+
+.belt-track img {
+  height: clamp(10rem, 24vw, 17rem);
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+/* Hard-edged square arrows, in the ink/cream palette. */
+.belt-arrow {
+  flex: 0 0 auto;
+  width: clamp(2.5rem, 5vw, 3.5rem);
+  border: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.belt-arrow:hover, .belt-arrow:focus-visible { background: var(--orange); }
+
+@media (prefers-reduced-motion: reduce) {
+  /* No auto-drift; the arrows still work. */
+  .belt-viewport { scroll-behavior: auto; }
 }
 
 /* ---------- Production gallery (filled mosaic) ---------- */
