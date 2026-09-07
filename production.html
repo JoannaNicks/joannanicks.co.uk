@@ -28,12 +28,36 @@
 
 <main id="main">
 
-  <section class="hero">
+  <section class="hero hero--tight">
     <h1>Content<br>&amp; Video</h1>
     <p class="roles">Podcasts, video and social content</p>
   </section>
 
-  <section class="band band--orange">
+  <!-- Image belt of content work. It drifts right to left on its own, pauses on
+       hover, and the arrows scroll it by hand. To add a photo, copy an <li> line
+       and set the image's width, height and a description in alt. The small script
+       at the foot of the page makes it move; leave it in place. -->
+  <section class="band band--peach band--flush-top">
+    <div class="belt" data-belt>
+      <button class="belt-arrow belt-prev" type="button" aria-label="Scroll images left">&#8249;</button>
+      <div class="belt-viewport">
+        <ul class="belt-track">
+          <li><img src="images/cv-lonely-leader-course-01.jpg" width="1400" height="788"  alt="Promo mockup of The Lonely Leader online course shown across a browser, tablet and PDF."></li>
+          <li><img src="images/cv-highrollers-01.jpg"          width="646"  height="1400" alt="Instagram post from the Hello or High Rollers podcast, the hosts recording an episode on a three-way video call."></li>
+          <li><img src="images/cv-steve-bate.jpg"              width="1080" height="1080" alt="Podcast promo graphic for a Steve Bate MBE episode, with listen links for Apple, Spotify and YouTube."></li>
+          <li><img src="images/cv-accelerator-01.jpg"          width="646"  height="1400" alt="Instagram reel from the AT Accelerator podcast, a guest speaking to camera from a workshop."></li>
+          <li><img src="images/cv-lonely-leader-course-02.jpg" width="1400" height="788"  alt="Promo mockup of The Lonely Leader course video open on a laptop."></li>
+          <li><img src="images/cv-lonely-leader-spotify-01.jpg" width="646" height="1400" alt="The Lonely Leader podcast show page on Spotify."></li>
+          <li><img src="images/cv-highrollers-02.jpg"          width="646"  height="1400" alt="Instagram post from the Hello or High Rollers podcast showing the hosts mid-episode."></li>
+          <li><img src="images/cv-lonely-leader-spotify-02.jpg" width="646" height="1400" alt="An episode of The Lonely Leader playing on Spotify."></li>
+          <li><img src="images/cv-accelerator-02.jpg"          width="646"  height="1400" alt="Instagram reel from the AT Accelerator podcast, a guest speaking to camera with a caption on screen."></li>
+        </ul>
+      </div>
+      <button class="belt-arrow belt-next" type="button" aria-label="Scroll images right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="band band--orange band--tight-top">
     <div class="bio">
       <div>
         <p class="lede">Production, editing and editorial support for organisations, businesses and creative projects.</p>
@@ -94,6 +118,59 @@
   <span>© 2026 Joanna Nicks</span>
   <span>West Yorkshire, UK</span>
 </footer>
+
+<script>
+/* Conveyor belt for the images: auto-drifts right to left, pauses on hover, and
+   the side arrows scroll it by hand. Plain JavaScript, no libraries. */
+(function () {
+  var belt = document.querySelector('[data-belt]');
+  if (!belt) return;
+  var vp = belt.querySelector('.belt-viewport');
+  var track = belt.querySelector('.belt-track');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  Array.prototype.slice.call(track.children).forEach(function (li) {
+    var c = li.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    track.appendChild(c);
+  });
+
+  var half = 0;
+  function measure() { half = track.scrollWidth / 2; }
+  measure();
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+
+  function wrap() {
+    if (half <= 0) return;
+    if (vp.scrollLeft >= half) vp.scrollLeft -= half;
+    else if (vp.scrollLeft < 0) vp.scrollLeft += half;
+  }
+  vp.addEventListener('scroll', wrap);
+
+  var hovering = false, nudgeUntil = 0;
+  belt.addEventListener('mouseenter', function () { hovering = true; });
+  belt.addEventListener('mouseleave', function () { hovering = false; });
+  belt.addEventListener('focusin', function () { hovering = true; });
+  belt.addEventListener('focusout', function () { hovering = false; });
+
+  function frame() {
+    if (!reduce && !hovering && Date.now() > nudgeUntil && half > 0) {
+      vp.scrollLeft += 0.5;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  function step(dir) {
+    var amount = Math.min(vp.clientWidth * 0.8, 420);
+    vp.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    nudgeUntil = Date.now() + 3000;
+  }
+  belt.querySelector('.belt-prev').addEventListener('click', function () { step(-1); });
+  belt.querySelector('.belt-next').addEventListener('click', function () { step(1); });
+})();
+</script>
 
 </body>
 </html>
