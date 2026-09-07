@@ -87,6 +87,9 @@ p { max-width: var(--measure); }
 
 .band--orange a, .band--ink a { color: var(--yellow); }
 
+/* Band whose content sits flush under whatever is above it. */
+.band--flush-top { padding-top: 0; }
+
 /* ---------- Header / nav ---------- */
 
 header.site {
@@ -124,6 +127,8 @@ nav a[aria-current="page"] { border-bottom-color: var(--orange); }
 /* ---------- Hero ---------- */
 
 .hero { padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(3rem, 9vw, 7rem); }
+/* Tight hero: pulls the images up close under the title, near the fold. */
+.hero--tight { padding-bottom: clamp(1rem, 3vw, 2rem); }
 .hero h1 { color: var(--orange); }
 
 .hero .roles {
