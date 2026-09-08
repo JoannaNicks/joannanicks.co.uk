@@ -470,3 +470,53 @@ footer.site {
   padding: 0.75rem 1rem;
 }
 .skip:focus { left: var(--pad); top: 0.5rem; z-index: 10; }
+
+/* ---------- Scroll reveal ---------- */
+/* Content starts nudged down and faded out, then eases into place as it
+   enters the viewport. reveal.js does the watching and adds `.is-in`.
+   The hidden state only applies once reveal.js has marked <html> with the
+   `js` class, so with JavaScript off the page shows normally. `.is-in`
+   uses !important so it always wins over the more specific hidden rules. */
+.js .hero h1,
+.js .hero .roles,
+.js .bio-text > p,
+.js .shout,
+.js .bio-photo,
+.js .door,
+.js .lede,
+.js .work,
+.js .service,
+.js .grid > *,
+.js .next,
+.js .contact h2,
+.js .contact > p,
+.js .contact .email {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 0.7, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 0.7, 0.3, 1);
+}
+
+.js .is-in { opacity: 1 !important; transform: none !important; }
+
+/* Anyone who prefers reduced motion: no movement, nothing hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .js .hero h1,
+  .js .hero .roles,
+  .js .bio-text > p,
+  .js .shout,
+  .js .bio-photo,
+  .js .door,
+  .js .lede,
+  .js .work,
+  .js .service,
+  .js .grid > *,
+  .js .next,
+  .js .contact h2,
+  .js .contact > p,
+  .js .contact .email {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
