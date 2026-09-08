@@ -103,31 +103,42 @@
   window.addEventListener('load', measure);
   window.addEventListener('resize', measure);
 
-  function wrap() {
-    if (half <= 0) return;
-    if (vp.scrollLeft >= half) vp.scrollLeft -= half;
-    else if (vp.scrollLeft < 0) vp.scrollLeft += half;
-  }
-  vp.addEventListener('scroll', wrap);
+  // The strip is moved with a CSS transform, not by scrolling the box. Transforms
+  // move reliably on phones, where nudging scrollLeft often quietly does nothing.
+  var pos = 0;     // how far the strip has moved, in pixels
+  var fling = 0;   // extra travel queued by the arrows; it eases out
+  var speed = 45;  // auto-drift, pixels per second — raise this to go faster
+  var hovering = false, holdUntil = 0, last = 0;
 
-  var hovering = false, nudgeUntil = 0;
   belt.addEventListener('mouseenter', function () { hovering = true; });
   belt.addEventListener('mouseleave', function () { hovering = false; });
   belt.addEventListener('focusin', function () { hovering = true; });
   belt.addEventListener('focusout', function () { hovering = false; });
 
-  function frame() {
-    if (!reduce && !hovering && Date.now() > nudgeUntil && half > 0) {
-      vp.scrollLeft += 0.5;
+  function frame(now) {
+    if (!last) last = now;
+    var dt = Math.min((now - last) / 1000, 0.05); // seconds since the last frame
+    last = now;
+
+    var move = 0;
+    if (!reduce && !hovering && now >= holdUntil) move += speed * dt;
+    if (fling) {                                   // arrow taps ease out smoothly
+      var d = fling * Math.min(1, dt * 6);
+      move += d; fling -= d;
+      if (Math.abs(fling) < 0.5) fling = 0;
+    }
+    if (move && half > 0) {
+      pos = (pos + move) % half;
+      if (pos < 0) pos += half;
+      track.style.transform = 'translateX(' + (-pos) + 'px)';
     }
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 
   function step(dir) {
-    var amount = Math.min(vp.clientWidth * 0.8, 420);
-    vp.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    nudgeUntil = Date.now() + 3000;
+    fling += dir * Math.min(vp.clientWidth * 0.8, 420);
+    holdUntil = performance.now() + 3000; // pause the auto-drift while you look
   }
   belt.querySelector('.belt-prev').addEventListener('click', function () { step(-1); });
   belt.querySelector('.belt-next').addEventListener('click', function () { step(1); });
