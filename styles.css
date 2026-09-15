@@ -302,6 +302,57 @@ blockquote cite {
   margin-top: 0.5rem;
 }
 
+/* ---------- Tools & platforms ---------- */
+/* Grouped lists on a responsive grid: four columns on a wide screen, two on a
+   tablet, one on a phone. Plain text, understated labels — deliberately quieter
+   than the service titles above it. */
+
+.toolset {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .toolset { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 62rem) {
+  .toolset { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Category label: small and quiet, an orange rule under it to give structure
+   without boxing anything in. */
+.toolgroup h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 3px solid var(--orange);
+}
+
+.tools {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tools li {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0.2rem 0;
+}
+
+.tools-note {
+  margin: clamp(2rem, 5vw, 3rem) 0 0;
+  max-width: var(--measure);
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
 /* ---------- Production belt (conveyor) ---------- */
 /* A strip of photos that drifts sideways; the script at the foot of
    writing-work.html moves it and the arrows scroll it by hand. */
@@ -486,6 +537,8 @@ footer.site {
 .js .lede,
 .js .work,
 .js .service,
+.js .toolgroup,
+.js .tools-note,
 .js .grid > *,
 .js .next,
 .js .contact h2,
@@ -510,6 +563,8 @@ footer.site {
   .js .lede,
   .js .work,
   .js .service,
+  .js .toolgroup,
+  .js .tools-note,
   .js .grid > *,
   .js .next,
   .js .contact h2,
