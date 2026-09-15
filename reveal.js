@@ -10,7 +10,7 @@
   // or the child would sit invisible while its parent fades in.
   var targets = Array.prototype.slice.call(document.querySelectorAll(
     '.hero h1, .hero .roles, .bio-text > p, .shout, .bio-photo, .door, ' +
-    '.lede, .work, .service, .grid > *, .next, ' +
+    '.lede, .work, .service, .toolgroup, .tools-note, .grid > *, .next, ' +
     '.contact h2, .contact > p, .contact .email'
   ));
   if (!targets.length) return;
