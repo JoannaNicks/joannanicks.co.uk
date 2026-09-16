@@ -353,6 +353,56 @@ blockquote cite {
   opacity: 0.8;
 }
 
+/* ---------- Pull quote ---------- */
+/* A client quote given its own band, set a step larger than body text for an
+   editorial feel. A big orange quote mark opens it; the name and role sit
+   beneath. To add another, copy the <figure class="pull-quote"> in the page. */
+
+.pull-quote { margin: 0; max-width: 40rem; }
+
+/* Reset the default blockquote look (border-left, measure) for this treatment. */
+.pull-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: none;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1vw + 1.05rem, 1.75rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+/* Big opening quote mark — the single accent on this band. */
+.pull-quote blockquote::before {
+  content: "\201C";
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 0.7;
+  color: var(--orange);
+  margin-bottom: 0.35rem;
+}
+
+.pull-quote figcaption {
+  margin-top: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.pull-quote .who {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.pull-quote .role {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
 /* ---------- Production belt (conveyor) ---------- */
 /* A strip of photos that drifts sideways; the script at the foot of
    writing-work.html moves it and the arrows scroll it by hand. */
@@ -535,6 +585,7 @@ footer.site {
 .js .bio-photo,
 .js .door,
 .js .lede,
+.js .pull-quote,
 .js .work,
 .js .service,
 .js .toolgroup,
@@ -561,6 +612,7 @@ footer.site {
   .js .bio-photo,
   .js .door,
   .js .lede,
+  .js .pull-quote,
   .js .work,
   .js .service,
   .js .toolgroup,
