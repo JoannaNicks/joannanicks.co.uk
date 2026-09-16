@@ -410,9 +410,9 @@ blockquote cite {
    services, work entries and quotes all key off these, so it stays consistent.
    The two-column bio is capped by its grid column, so it just fills it. */
 @media (min-width: 62rem) {
-  :root { --measure: 46rem; }
-  .lede { max-width: 34ch; }
-  .pull-quote { max-width: 50rem; }
+  :root { --measure: 52rem; }
+  .lede { max-width: 40ch; }
+  .pull-quote { max-width: 56rem; }
 }
 
 /* ---------- Production belt (conveyor) ---------- */
