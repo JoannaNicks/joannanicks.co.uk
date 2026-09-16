@@ -403,6 +403,18 @@ blockquote cite {
   margin-top: 0.15rem;
 }
 
+/* ---------- Wider reading width on desktop ---------- */
+/* On a phone the text already runs the full width. On a wide screen a 34rem
+   column sits lost against the empty space to its right and makes the page
+   taller than it needs to be, so the reading width opens out — the bio,
+   services, work entries and quotes all key off these, so it stays consistent.
+   The two-column bio is capped by its grid column, so it just fills it. */
+@media (min-width: 62rem) {
+  :root { --measure: 46rem; }
+  .lede { max-width: 34ch; }
+  .pull-quote { max-width: 50rem; }
+}
+
 /* ---------- Production belt (conveyor) ---------- */
 /* A strip of photos that drifts sideways; the script at the foot of
    writing-work.html moves it and the arrows scroll it by hand. */
