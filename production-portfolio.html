@@ -34,22 +34,21 @@
 
   <!-- ============================================================
        CASE STUDY: The Lonely Leader
-       A whole client on one run of bands: the intro, a stats row,
-       then a band per strand of work. To add another case study
-       later, copy this whole run (from the orange intro band down to
-       the client quote) and change the words, images and embeds.
+       One client = one band = one colour, so it reads as a single
+       section. To add the next client, copy this whole <section>,
+       change band--cream to the next colour (band--peach, then
+       band--orange, then band--ink) and swap the words, images and
+       embeds. The stat figures, strand titles and quote mark all
+       recolour themselves to suit the band.
        ============================================================ -->
+  <section class="band band--cream">
 
-  <section class="band band--orange">
     <h2>The Lonely Leader</h2>
     <p class="credits">Podcast production · Video editing · Membership site · Content strategy · Email marketing · Social content</p>
     <p>I work with James Rule, founder of <a href="https://www.thelonelyleader.co.uk/" target="_blank" rel="noopener">The Lonely Leader</a>, across podcasting, digital content, email newsletters and online learning. What began as podcast production has grown into a much broader creative partnership, supporting both the delivery of content and the strategy behind the brand.</p>
-  </section>
 
-  <!-- Stats row. Big flat figures on a rule. To add or change one, edit a
-       <div class="stat"> block — the .figure is the headline, the .label the
-       line beneath. -->
-  <section class="band band--ink">
+    <!-- Stats row. To add or change one, edit a <div class="stat"> block —
+         the .figure is the headline, the .label the line beneath. -->
     <div class="stats">
       <div class="stat">
         <p class="figure">100+</p>
@@ -68,30 +67,33 @@
         <p class="label">Membership platform built from the ground up</p>
       </div>
     </div>
-  </section>
 
-  <!-- Strand 1: Podcast production -->
-  <section class="band band--cream">
+    <!-- Strand 1: Podcast production. Each strand is an <article class="work">;
+         the rule between them is drawn by the .work border, so they read as
+         parts of one section rather than separate bands. -->
     <article class="work">
       <h3>Podcast Production</h3>
       <p class="form">From recorded audio and video through to polished, published episodes.</p>
       <p>I manage the production of The Lonely Leader podcast from recorded audio and video through to polished, published content. My work includes editing full episodes, refining structure and pacing, creating titles and show notes, publishing episodes, and producing short-form video content to extend the life of each conversation across social platforms.</p>
       <p>I also provide editorial and strategic input, helping identify the strongest ideas within each episode and shape them into clear, engaging content for The Lonely Leader audience.</p>
 
-      <!-- Podcast player. Apple Podcasts show player — plays episodes in the
-           page, shows no like or view counts. To feature one specific episode
-           instead, swap the src for that episode's embed link (Apple or
-           Spotify). -->
-      <figure class="media">
-        <iframe class="embed-audio" title="The Lonely Leader on Apple Podcasts"
-          allow="autoplay *; encrypted-media *;" height="450"
+      <!-- Two recent episodes, played in the page (Apple Podcasts). No like or
+           view counts. To change an episode, edit the ?i= number in the src —
+           that is the episode's id on Apple. -->
+      <div class="episodes">
+        <iframe title="The Lonely Leader — ‘What your team say when you’re not in the room’ on Apple Podcasts"
+          allow="autoplay *; encrypted-media *;" height="175"
           sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.podcasts.apple.com/gb/podcast/id1726730318"></iframe>
-        <figcaption class="caption"><strong>The Lonely Leader</strong> — edited, published and produced by Joanna. <a href="https://pod.link/1726730318" target="_blank" rel="noopener">Listen on every platform.</a></figcaption>
-      </figure>
+          src="https://embed.podcasts.apple.com/gb/podcast/id1726730318?i=1000785630289"></iframe>
+        <iframe title="The Lonely Leader — ‘The Morning Belongs to You’ on Apple Podcasts"
+          allow="autoplay *; encrypted-media *;" height="175"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.podcasts.apple.com/gb/podcast/id1726730318?i=1000782069934"></iframe>
+      </div>
+      <p class="caption"><strong>The Lonely Leader</strong> — edited, published and produced by Joanna. <a href="https://pod.link/1726730318" target="_blank" rel="noopener">Listen on every platform.</a></p>
 
       <!-- Short-form clips. Vertical (9:16) YouTube embeds. To add another,
-           copy a <figure> and change the video ID after /embed/ and the
+           copy a <figure> and change the video id after /embed/ and the
            caption. rel=0 stops YouTube touting other channels' videos. -->
       <div class="clips">
         <figure>
@@ -110,18 +112,16 @@
         </figure>
       </div>
     </article>
-  </section>
 
-  <!-- Strand 2: Beyond the podcast -->
-  <section class="band band--peach">
+    <!-- Strand 2: Beyond the podcast -->
     <article class="work">
       <h3>Beyond the podcast</h3>
       <p class="form">Membership, learning and email marketing.</p>
       <p>Over time, my role has expanded into the wider digital content ecosystem around The Lonely Leader. I built and developed the <a href="https://www.tll.academy/" target="_blank" rel="noopener">The Lonely Leader Academy</a> in Kajabi, helping turn James’s leadership content into a structured online membership and learning experience.</p>
       <p>I also support email marketing and audience development, including producing newsletters and building multiple email and marketing funnels that connect The Lonely Leader’s content, resources and offers.</p>
 
-      <!-- Two real shots of the Academy. To add newsletter or funnel examples
-           later, add more <figure> blocks in this grid, each with an <img>
+      <!-- The Academy. To add newsletter or funnel examples, add more
+           <figure class="media"> blocks in this grid, each with an <img>
            (set width, height and a descriptive alt) and a <figcaption>. -->
       <div class="grid">
         <figure class="media">
@@ -134,10 +134,8 @@
         </figure>
       </div>
     </article>
-  </section>
 
-  <!-- Strand 3: Content & brand support -->
-  <section class="band band--cream">
+    <!-- Strand 3: Content & brand support -->
     <article class="work">
       <h3>Content &amp; brand support</h3>
       <p class="form">Creative and strategic support across the brand.</p>
@@ -149,11 +147,9 @@
            blocks like the one in the strand above, or a run of the short-form
            <div class="clips"> if they are vertical videos. -->
     </article>
-  </section>
 
-  <!-- Client quote. Same pull-quote treatment used across the site. Swap the
-       words for James's strongest testimonial when you have it. -->
-  <section class="band band--ink">
+    <!-- Client quote. Swap the words for James's strongest testimonial when
+         you have it. -->
     <figure class="pull-quote">
       <blockquote>Jo has a creative flair and eye for detail that means she has become the driving force behind the growth and expansion of our digital portfolio.</blockquote>
       <figcaption>
@@ -161,7 +157,9 @@
         <span class="role">Founder, The Lonely Leader</span>
       </figcaption>
     </figure>
+
   </section>
+  <!-- END CASE STUDY: The Lonely Leader -->
 
   <section class="band band--peach">
     <h2>More</h2>
