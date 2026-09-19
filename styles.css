@@ -533,6 +533,74 @@ blockquote cite {
 .caption { margin: 0.75rem 0 0; font-size: 0.95rem; }
 .caption strong { font-family: "Poppins", sans-serif; }
 
+/* A single featured image or embed with a caption under it. */
+figure.media { margin: 2.5rem 0 0; }
+figure.media img { width: 100%; height: auto; }
+
+/* Vertical short-form clips (Reels / Shorts) shown at their true 9:16, sat in a
+   row that wraps. Two side by side on anything wider than a phone, capped so a
+   tall video never dominates the band; they stack and fill on a phone. */
+.embed--vertical { aspect-ratio: 9 / 16; }
+
+.clips { display: flex; flex-wrap: wrap; gap: clamp(1rem, 3vw, 2rem); margin-top: 2.5rem; }
+.clips figure { margin: 0; width: 100%; max-width: 17rem; }
+.clips figcaption { margin-top: 0.75rem; font-size: 0.95rem; }
+
+@media (min-width: 34rem) {
+  .clips figure { width: calc(50% - 1rem); max-width: 15rem; }
+}
+
+/* Audio player embed (Apple Podcasts / Spotify). A fixed-height widget, not a
+   16:9 video, so it keeps its own sizing rather than using .embed. */
+.embed-audio {
+  width: 100%;
+  max-width: 40rem;
+  border: 0;
+  background: transparent;
+  margin-top: 2.5rem;
+}
+
+/* ---------- Case-study credits line ---------- */
+/* The strip of disciplines under a client name on a portfolio case study. */
+.credits {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  max-width: 48rem;
+}
+
+/* ---------- Stats row ---------- */
+/* Big flat figures on a rule, four across on a wide screen, two on a tablet,
+   one on a phone — the same responsive shape as the tools grid. To add one,
+   copy a <div class="stat"> block. */
+.stats {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) { .stats { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 62rem) { .stats { grid-template-columns: repeat(4, 1fr); } }
+
+.stat { border-top: 4px solid var(--orange); padding-top: 1.25rem; }
+.band--ink .stat, .band--orange .stat { border-top-color: var(--yellow); }
+
+.stat .figure {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--orange);
+}
+
+.band--ink .stat .figure, .band--orange .stat .figure { color: var(--yellow); }
+
+.stat .label { margin: 0.6rem 0 0; font-size: 0.95rem; max-width: 24ch; }
+
 /* ---------- Contact ---------- */
 
 .contact h2 {
@@ -602,6 +670,7 @@ footer.site {
 .js .service,
 .js .toolgroup,
 .js .tools-note,
+.js .stat,
 .js .grid > *,
 .js .next,
 .js .contact h2,
@@ -629,6 +698,7 @@ footer.site {
   .js .service,
   .js .toolgroup,
   .js .tools-note,
+  .js .stat,
   .js .grid > *,
   .js .next,
   .js .contact h2,
