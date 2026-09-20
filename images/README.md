@@ -1,14 +1,14 @@
 # Photos
 
-Drop image files straight into this folder. **Originals, please** — full size,
+Drop image files straight into this folder. **Originals, please**: full size,
 straight off the camera or phone. The site shrinks them to fit; it can't grow
 them back.
 
 ## How the two folders work
 
-- `images/originals/` — the untouched files, exactly as you sent them. Nothing
+- `images/originals/`: the untouched files, exactly as you sent them. Nothing
   on the site points at these. They're kept so a bigger version always exists.
-- `images/` — the shrunk-down copies the pages actually use, at about 1400px on
+- `images/`: the shrunk-down copies the pages actually use, at about 1400px on
   the long edge and 100–300KB each, so pages stay quick to load.
 
 Put your file in either place and say so, and Claude will make the web copy,

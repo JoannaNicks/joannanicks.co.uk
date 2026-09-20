@@ -4,7 +4,7 @@ Context for any agent working on this repo.
 
 ## What this is
 
-The personal site for Joanna Nicks — award-winning playwright, and freelance Content Producer / Video Editor based in West Yorkshire. Live at joannanicks.co.uk.
+The personal site for Joanna Nicks, award-winning playwright, and freelance Content Producer / Video Editor based in West Yorkshire. Live at joannanicks.co.uk.
 
 Two audiences, deliberately separated:
 
@@ -23,26 +23,26 @@ This is a deliberate choice. Do not introduce React, Next.js, Tailwind, a bundle
 
 ## Files
 
-- `index.html` — homepage, the fork
+- `index.html`: homepage, the fork
 
 Content & Video section:
 
-- `production.html` — section front page
-- `production-portfolio.html` — the work
-- `production-testimonials.html` — client quotes and client list
+- `production.html`: section front page
+- `production-portfolio.html`: the work
+- `production-testimonials.html`: client quotes and client list
 - `production-contact.html`
 
 Playwriting section:
 
-- `writing.html` — section front page
-- `writing-work.html` — produced works, press, production images
+- `writing.html`: section front page
+- `writing-work.html`: produced works, press, production images
 - `writing-contact.html`
 
 Shared:
 
-- `styles.css` — every colour, font and layout rule
-- `images/` — web-sized photos, the ones pages actually reference
-- `images/originals/` — untouched originals, never referenced by a page
+- `styles.css`: every colour, font and layout rule
+- `images/`: web-sized photos, the ones pages actually reference
+- `images/originals/`: untouched originals, never referenced by a page
 
 Phone and camera originals are far too heavy to serve. Add a resized copy at
 roughly 1400px on the long edge to `images/`, keep the original in
@@ -73,7 +73,7 @@ If a change would make the site look more like a generic portfolio template, don
 
 ## Outstanding
 
-- Content & Video copy is placeholder — Joanna to write.
+- Content & Video copy is placeholder. Joanna to write.
 - Portfolio, testimonials and client list are empty placeholders awaiting real entries.
 - All embeds are placeholder boxes (`.placeholder`). Replace with real iframes, adding `class="embed"`.
 - Production photos needed at original resolution; the ones on the old Wix site are downscaled and unusable.

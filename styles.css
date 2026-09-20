@@ -1,5 +1,5 @@
 /* ============================================================
-   Joanna Nicks — site styles
+   Joanna Nicks: site styles
    Colours and type live here. Change a value once, it changes
    everywhere on the site.
    ============================================================ */
@@ -90,7 +90,7 @@ p { max-width: var(--measure); }
 /* Band whose content sits flush under whatever is above it. */
 .band--flush-top { padding-top: 0; }
 
-/* A gentle top gap — less than a full band, more than flush. */
+/* A gentle top gap: less than a full band, more than flush. */
 .band--tight-top { padding-top: clamp(1.5rem, 4vw, 3rem); }
 
 /* ---------- Header / nav ---------- */
@@ -304,7 +304,7 @@ blockquote cite {
 
 /* ---------- Tools & platforms ---------- */
 /* Grouped lists on a responsive grid: four columns on a wide screen, two on a
-   tablet, one on a phone. Plain text, understated labels — deliberately quieter
+   tablet, one on a phone. Plain text, understated labels, deliberately quieter
    than the service titles above it. */
 
 .toolset {
@@ -372,7 +372,7 @@ blockquote cite {
   text-wrap: balance;
 }
 
-/* Big opening quote mark — the single accent on this band. */
+/* Big opening quote mark, the single accent on this band. */
 .pull-quote blockquote::before {
   content: "\201C";
   display: block;
@@ -406,7 +406,7 @@ blockquote cite {
 /* ---------- Wider reading width on desktop ---------- */
 /* On a phone the text already runs the full width. On a wide screen a 34rem
    column sits lost against the empty space to its right and makes the page
-   taller than it needs to be, so the reading width opens out — the bio,
+   taller than it needs to be, so the reading width opens out. The bio,
    services, work entries and quotes all key off these, so it stays consistent.
    The two-column bio is capped by its grid column, so it just fills it. */
 @media (min-width: 62rem) {
@@ -555,7 +555,7 @@ figure.media img { width: 100%; height: auto; }
 /* Podcast episode players (Apple Podcasts / Spotify). Fixed-height audio
    widgets, not 16:9 video, so they keep their own sizing. Two side by side on
    a wider screen, stacked on a phone. To add or change an episode, edit the
-   src of an <iframe> — for Apple, the ?i= number is the episode id. */
+   src of an <iframe>. For Apple, the ?i= number is the episode id. */
 .episodes {
   display: grid;
   gap: clamp(1rem, 2.5vw, 1.75rem);
@@ -581,7 +581,7 @@ figure.media img { width: 100%; height: auto; }
 
 /* ---------- Stats row ---------- */
 /* Big flat figures on a rule, four across on a wide screen, two on a tablet,
-   one on a phone — the same responsive shape as the tools grid. To add one,
+   one on a phone, the same responsive shape as the tools grid. To add one,
    copy a <div class="stat"> block. */
 .stats {
   display: grid;

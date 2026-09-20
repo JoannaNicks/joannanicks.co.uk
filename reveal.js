@@ -1,5 +1,5 @@
 /* ============================================================
-   Scroll reveal — content eases up into place as it scrolls in.
+   Scroll reveal: content eases up into place as it scrolls in.
    Enhancement only: the hidden state lives under the `js` class
    that this adds to <html>, so with JavaScript off nothing is
    ever hidden. Anyone who prefers reduced motion sees it all at
