@@ -567,6 +567,20 @@ figure.media img { width: 100%; height: auto; }
 
 .episodes iframe { width: 100%; height: 175px; border: 0; background: transparent; }
 
+/* A compact strip of square social assets: three across and kept small so it
+   never dominates the strand. It scales down with the screen rather than
+   wrapping, so the three stay on one line. To add another, copy a <figure>. */
+.social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.6rem, 2vw, 1.1rem);
+  margin-top: 2.5rem;
+  max-width: 42rem;
+}
+.social figure { margin: 0; }
+.social img { width: 100%; height: auto; }
+.social figcaption { margin-top: 0.6rem; font-size: 0.85rem; }
+
 /* ---------- Case-study credits line ---------- */
 /* The strip of disciplines under a client name on a portfolio case study. */
 .credits {
