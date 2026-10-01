@@ -384,6 +384,18 @@ blockquote cite {
   margin-bottom: 0.35rem;
 }
 
+/* A quote can run to several paragraphs, each its own <p>. */
+.pull-quote blockquote p { margin: 0; max-width: none; }
+.pull-quote blockquote p + p { margin-top: 0.9em; }
+
+/* Full testimonials (the Testimonials page) run longer than a one-line pull
+   quote, so they're set a step smaller to stay comfortable to read. */
+.pull-quote--long blockquote {
+  font-size: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
 .pull-quote figcaption {
   margin-top: 1.5rem;
   font-family: "Poppins", sans-serif;
