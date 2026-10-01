@@ -606,6 +606,7 @@ figure.media img { width: 100%; height: auto; }
 
 @media (min-width: 40rem) { .stats { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 62rem) { .stats { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 62rem) { .stats--three { grid-template-columns: repeat(3, 1fr); } }
 
 .stat { border-top: 4px solid var(--orange); padding-top: 1.25rem; }
 .band--ink .stat, .band--orange .stat { border-top-color: var(--yellow); }
