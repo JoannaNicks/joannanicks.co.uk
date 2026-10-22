@@ -30,6 +30,20 @@
   <section class="hero">
     <h1>Portfolio</h1>
     <p class="roles">Selected client work</p>
+
+    <!-- Jump-to index. One <li> per client, in the same order as the case
+         studies below. To add a client: copy a line, change the name and the
+         #id, and give that client's <section> the matching id. -->
+    <nav class="index" aria-labelledby="index-title">
+      <h2 id="index-title">Case studies</h2>
+      <ol>
+        <li><a href="#the-lonely-leader"><span class="name">The Lonely Leader</span></a></li>
+        <li><a href="#dice-house-media"><span class="name">Dice House Media</span></a></li>
+        <li><a href="#st-georges-community-centre"><span class="name">St George’s Community Centre</span></a></li>
+        <li><a href="#athlete-transition-accelerator"><span class="name">Athlete Transition Accelerator</span></a></li>
+        <li><a href="#manchester-south-central-foodbank"><span class="name">Manchester South Central Foodbank</span></a></li>
+      </ol>
+    </nav>
   </section>
 
   <!-- ============================================================
@@ -41,7 +55,7 @@
        embeds. The stat figures, strand titles and quote mark all
        recolour themselves to suit the band.
        ============================================================ -->
-  <section class="band band--cream">
+  <section id="the-lonely-leader" tabindex="-1" class="band band--cream">
 
     <h2>The Lonely Leader</h2>
     <p class="credits">Podcast production · Video editing · Membership site · Content strategy · Email marketing · Social content</p>
@@ -178,7 +192,7 @@
        CASE STUDY: Dice House Media
        Same layout as The Lonely Leader above, on the next colour.
        ============================================================ -->
-  <section class="band band--peach">
+  <section id="dice-house-media" tabindex="-1" class="band band--peach">
 
     <h2>Dice House Media</h2>
     <p class="credits">Short-form video editing · Podcast video · Social content</p>
@@ -260,7 +274,7 @@
        Same layout again, on the next colour. Each project is its own
        <article class="work"> strand.
        ============================================================ -->
-  <section class="band band--orange">
+  <section id="st-georges-community-centre" tabindex="-1" class="band band--orange">
 
     <h2>St George’s Community Centre</h2>
     <p class="credits">Communications · Branding &amp; Design · Social Media · Digital Content</p>
@@ -344,7 +358,7 @@
        Same layout again, on the next colour. Each strand of the work
        is its own <article class="work">.
        ============================================================ -->
-  <section class="band band--ink">
+  <section id="athlete-transition-accelerator" tabindex="-1" class="band band--ink">
 
     <h2>Athlete Transition Accelerator</h2>
     <p class="credits">Brand development · Podcast production · Video editing · Social media strategy · Digital content · Copywriting</p>
@@ -467,7 +481,7 @@
        On peach rather than the next colour in the cycle, because the
        More band below is cream and two cream bands would run together.
        ============================================================ -->
-  <section class="band band--peach">
+  <section id="manchester-south-central-foodbank" tabindex="-1" class="band band--peach">
 
     <h2>Manchester South Central Foodbank</h2>
     <p class="credits">Social media management · Content creation · Campaign planning · Community engagement</p>

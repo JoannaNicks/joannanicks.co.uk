@@ -707,6 +707,69 @@ footer.site {
 }
 .skip:focus { left: var(--pad); top: 0.5rem; z-index: 10; }
 
+/* ---------- Jump-to index ----------
+   The list of case studies under the hero on the portfolio page. Each item
+   links to a client's <section> by its id. Styled off the same orange rules
+   as the work strands, so it reads as part of the page, not a widget. */
+
+.index {
+  display: block;                   /* the site nav is a flex row; this isn't */
+  max-width: var(--measure);
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+}
+
+.index h2 {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--orange);
+  margin: 0 0 0.75rem;
+}
+
+.index ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: casestudy;
+}
+
+.index li {
+  border-top: 4px solid var(--orange);
+  counter-increment: casestudy;
+}
+
+.index li:last-child { border-bottom: 4px solid var(--orange); }
+
+.index a {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: baseline;
+  padding: 0.8rem 0 0.9rem;         /* a tall row, so it's an easy tap target */
+  border-bottom: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.index a::before {
+  content: counter(casestudy, decimal-leading-zero);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+}
+
+.index .name {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.3vw, 1.45rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.index a:hover, .index a:focus-visible { background: var(--yellow); color: var(--ink); }
+
 /* ---------- Scroll reveal ---------- */
 /* Content starts nudged down and faded out, then eases into place as it
    enters the viewport. reveal.js does the watching and adds `.is-in`.
