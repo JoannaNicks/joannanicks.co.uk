@@ -9,7 +9,7 @@
   // The blocks that lift in. Never nest one target inside another,
   // or the child would sit invisible while its parent fades in.
   var targets = Array.prototype.slice.call(document.querySelectorAll(
-    '.hero h1, .hero .roles, .bio-text > p, .shout, .bio-photo, .door, ' +
+    '.hero h1, .hero .roles, .index, .bio-text > p, .shout, .bio-photo, .door, ' +
     '.lede, .pull-quote, .work, .service, .toolgroup, .tools-note, .stat, .grid > *, .next, ' +
     '.contact h2, .contact > p, .contact .email'
   ));

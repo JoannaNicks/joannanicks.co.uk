@@ -778,6 +778,7 @@ footer.site {
    uses !important so it always wins over the more specific hidden rules. */
 .js .hero h1,
 .js .hero .roles,
+.js .index,
 .js .bio-text > p,
 .js .shout,
 .js .bio-photo,
@@ -806,6 +807,7 @@ footer.site {
 @media (prefers-reduced-motion: reduce) {
   .js .hero h1,
   .js .hero .roles,
+  .js .index,
   .js .bio-text > p,
   .js .shout,
   .js .bio-photo,
