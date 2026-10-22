@@ -551,6 +551,10 @@ figure.media { margin: 2.5rem 0 0; }
 figure.media img { width: 100%; height: auto; }
 .grid figure.media { margin: 0; }
 
+/* A landscape screengrab or a 16:9 video kept to a modest width, so it sits
+   alongside the writing instead of filling the whole band. */
+figure.media--small { max-width: 32rem; }
+
 /* Vertical short-form clips (Reels / Shorts) shown at their true 9:16, sat in a
    row that wraps. Two side by side on anything wider than a phone, capped so a
    tall video never dominates the band; they stack and fill on a phone. */
@@ -592,6 +596,11 @@ figure.media img { width: 100%; height: auto; }
 .social figure { margin: 0; }
 .social img { width: 100%; height: auto; }
 .social figcaption { margin-top: 0.6rem; font-size: 0.85rem; }
+
+/* Four posts read better as a 2 x 2 block than as a row of three with one
+   stranded underneath, and at this size the screenshots sit close to their
+   true width instead of being squeezed. */
+.social--pairs { grid-template-columns: repeat(2, 1fr); }
 
 /* ---------- Case-study credits line ---------- */
 /* The strip of disciplines under a client name on a portfolio case study. */
